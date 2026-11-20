@@ -20,6 +20,14 @@ SUITS = ["♠", "♥", "♦", "♣"]
 
 @dataclass
 class Card:
+    """
+    The Card class store the attributes of a card will have.
+    Each card has a rank and the suit that stored in str.
+
+    It has the value func for quick access to the card value that can be work out.
+    Since the value is 0 if the card is greater than 10, and A count as 1.
+    """
+
     rank: str
     suit: str
 
@@ -33,6 +41,12 @@ class Card:
 
 @dataclass 
 class Deck:
+    """
+    Deck class main func is creating a list to representing the shuffled deck for later use.
+    Pre-set the deck number as 8 which is normal number, and it can be change by calling it.
+
+    post init -> it will run after the deck number is confirmed.
+    """
     num_decks: int = 8 
     cards: list[Card] = field(init=False)
 
