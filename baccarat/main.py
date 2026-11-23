@@ -33,13 +33,13 @@ def main():
     player_total = 0
     banker_total = 0
     
-    player_total += int(deck.deal().rank)
-    banker_total += int(deck.deal().rank)
-    player_total += int(deck.deal().rank)
-    banker_total += int(deck.deal().rank)
+    player_total += int(deck.deal().value)
+    banker_total += int(deck.deal().value)
+    player_total += int(deck.deal().value)
+    banker_total += int(deck.deal().value)
     
-    print(f"Player total after first round is {player_total}")
-    print(f"Bankyer total after first round is {banker_total}")
+    print(f"Player total after first round is {rules.get_unit_digit(player_total)}")
+    print(f"Bankyer total after first round is {rules.get_unit_digit(banker_total)}")
 
 
 if __name__ == "__main__":

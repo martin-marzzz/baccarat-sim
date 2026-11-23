@@ -58,6 +58,9 @@ def banker_should_draws(banker_total: int, player_third: Optional[int]) -> bool:
     # Banker total is 7
     return False
 
+def get_unit_digit(total: int) -> int:
+    return total % 10
+
 def win_on_six(banker_total: int) -> bool:
     return banker_total == 6
 
