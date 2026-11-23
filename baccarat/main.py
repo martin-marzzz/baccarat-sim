@@ -28,7 +28,19 @@ def main():
         return
 
     deck = Deck(num_decks = num_decks)
-    print(f"Created deck with {len(deck.cards)} cards")
+    #print(f"Created deck with {len(deck.cards)} cards")
+
+    player_total = 0
+    banker_total = 0
+    
+    player_total += int(deck.deal().rank)
+    banker_total += int(deck.deal().rank)
+    player_total += int(deck.deal().rank)
+    banker_total += int(deck.deal().rank)
+    
+    print(f"Player total after first round is {player_total}")
+    print(f"Bankyer total after first round is {banker_total}")
+
 
 if __name__ == "__main__":
     main()
