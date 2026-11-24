@@ -28,11 +28,11 @@ def is_total_less_than_six(total: int) -> bool:
     """Return True if total is 0-5."""
     return total <= 5
 
-def player_should_draws(player_total: int) -> bool:
+def player_should_draw(player_total: int) -> bool:
     """Return True if play's hand is 0-5, player will draw. Greater will not draw."""
     return is_total_less_than_six(player_total)
 
-def banker_should_draws(banker_total: int, player_third: Optional[int]) -> bool:
+def banker_should_draw(banker_total: int, player_third: Optional[int]) -> bool:
     """
     Return True if banker must draw a third card.
 
@@ -64,7 +64,7 @@ def get_unit_digit(total: int) -> int:
 def win_on_six(banker_total: int) -> bool:
     return banker_total == 6
 
-def get_winner(banker_total: int, player_total: int) -> str:
+def get_winner(player_total: int, banker_total: int) -> str:
     if banker_total > player_total:
         return "Banker"
     
@@ -73,7 +73,7 @@ def get_winner(banker_total: int, player_total: int) -> str:
     
     return "Tie" 
 
-def get_odds(banker_total: int, player_total: int) -> float:
+def get_odds(player_total: int, banker_total: int) -> float:
     if banker_total > player_total:
         if win_on_six(banker_total):
             return 1.5
@@ -84,4 +84,4 @@ def get_odds(banker_total: int, player_total: int) -> float:
         return 2
 
     else:
-        return 1
+        return 0.01

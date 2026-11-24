@@ -33,8 +33,8 @@ class Card:
 
     @property 
     def value(self) -> int:
-        if self.rank in ("J", "Q", "K"):
-            return 10
+        if self.rank in ("10", "J", "Q", "K"):
+            return 0
         if self.rank == "A":
             return 1
         return int(self.rank)
@@ -58,6 +58,9 @@ class Deck:
             for suit in SUITS
         ]
         random.shuffle(self.cards)
+
+    def count(self) -> int:
+        return len(self.cards)
 
     def deal(self) -> Card:
         return self.cards.pop()
