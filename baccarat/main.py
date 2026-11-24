@@ -33,12 +33,18 @@ def main():
     player_total = 0
     banker_total = 0
     
-    player_total += int(deck.deal().value)
-    banker_total += int(deck.deal().value)
-    player_total += int(deck.deal().value)
-    banker_total += int(deck.deal().value)
+    player_first = deck.deal()
+    banker_first = deck.deal()
+    player_second = deck.deal()
+    banker_second = deck.deal()
+
+
+    player_total = int(player_first.value + player_second.value)
+    banker_total = int(banker_first.value + banker_second.value)
     
+    print(f"Player's hand {player_first.rank}{player_first.suit}, {player_second.rank}{player_second.suit}")
     print(f"Player total after first round is {rules.get_unit_digit(player_total)}")
+    print(f"Banker's hand {banker_first.rank}{banker_first.suit}, {banker_second.rank}{banker_second.suit}")
     print(f"Bankyer total after first round is {rules.get_unit_digit(banker_total)}")
 
 
