@@ -84,4 +84,4 @@ def get_odds(player_total: int, banker_total: int) -> float:
         return 2
 
     else:
-        return 0.01
+        return 0.00
