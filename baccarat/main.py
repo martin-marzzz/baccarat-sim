@@ -49,9 +49,10 @@ def main():
         player_total = (p1.value + p2.value) % 10
         banker_total = (b1.value + b2.value) % 10
 
-        print(f"Initial → Player: {player_total}, Banker: {banker_total}")
 
         if player_total >= 8 or banker_total >= 8:
+            print(f"Player's hand {p1.suit} {p1.rank}, {p2.suit} {p2.rank}")
+            print(f"Banker's hand {b1.suit} {b1.rank}, {b2.suit} {b2.rank}")
             print(f"Final   → Player: {player_total}, Banker: {banker_total} (Natural)")
             print(f"Winner: {rules.get_winner(player_total, banker_total)}")
             print("-" * 30)
@@ -81,7 +82,12 @@ def main():
         else:
             tie_win += 1
 
-
+        print(f"Player's hand {p1.suit} {p1.rank}, {p2.suit} {p2.rank}")
+        print(f"Banker's hand {b1.suit} {b1.rank}, {b2.suit} {b2.rank}")
+        if p3 != None:
+            print(f"Player third card: {p3.suit} {p3.rank}")
+        if b3 != None:
+            print(f"Player third card: {b3.suit} {b3.rank}")
         print(f"Final   → Player: {player_total}, Banker: {banker_total}")
         print(f"Winner: {rules.get_winner(player_total, banker_total)}")
         print("-" * 30)
